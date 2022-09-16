@@ -1,44 +1,53 @@
 class StringOperations:
 
-    def is_palindrome(self, text):
+    @staticmethod
+    def check_if_sequence_is_palindrome(text) -> bool:
         for i in range(0, int(len(text)/2)):
             if text[i] != text[(len(text)-1) - i]:
                 return False
         return True
 
-    def concatenate_array(self, string_array):
+    @staticmethod
+    def concatenate_array(string_array: list[str]) -> str:
         string_to_return = ""
         for string in string_array:
-            string_to_return += string+" "
+            string_to_return += string + " "
         return string_to_return
 
-    def delete_all_consonants(self, text):
+    @staticmethod
+    def delete_all_consonants(text: str) -> str:
         string_to_return = ""
         for letter in text:
             if letter in "aeiouAEIOU":
                 string_to_return += letter
         return string_to_return
 
-    def delete_all_vowes(self, text):
+    @staticmethod
+    def delete_all_vowes(text: str) -> str:
         string_to_return = ""
         for letter in text:
             if letter not in "aeiouAEIOU":
                 string_to_return += letter
         return string_to_return
 
-    def check_if_word_is_forbidden(self, word, ban_list, substitute_word):
+    @staticmethod
+    def check_if_word_is_forbidden(word: str, ban_list: list[str]) -> bool:
         return word in ban_list
 
-    def substitute_letters(self, word, ban_list, substitute_letter):
+    @staticmethod
+    def substitute_letters(word, ban_list, substitute_letter):
         for letter in word:
             if letter in ban_list:
                 word.replace(letter, substitute_letter)
 
+
 class NumbersOperations:
 
-    def check_if_number_between(self, left, right, number):
+    @staticmethod
+    def check_if_number_is_between(left: int, right: int, number: int) -> bool:
         return left < number < right
 
-    def check_if_dividable(self, divident, divisor):
+    @staticmethod
+    def check_if_number_is_dividable(divident: float, divisor: float) -> bool:
         return divident % divisor == 0
 
