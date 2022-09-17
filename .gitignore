@@ -4,3 +4,4 @@ Pipfile
 notes*
 .idea
 __pycache__/
+test_*
